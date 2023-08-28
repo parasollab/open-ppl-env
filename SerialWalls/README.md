@@ -6,4 +6,6 @@ __Difficulty__: 3/5
 
 __Provided by__: Parasol Lab
 
+The ```serial_walls.xml``` file is provided, which will generate the below solution.
+
 ![Alt Text](media/serial-walls.gif)
