@@ -64,6 +64,11 @@
       <ObstacleBasedSampler label="ObstacleBased" vcLabel="rapid" useBBX="false"
         pointSelection="cspace" dmLabel="euclidean" stepSize="0.0"
         nShellsColl="0" nShellsFree="10" debug="false"/>
+
+      <MixSampler label="MixOBUniform">
+        <Sampler label="UniformRandomFree" p="0.1"/>
+        <Sampler label="ObstacleBased" p="0.9"/>
+      </MixSampler>
     </Samplers>
 
     <LocalPlanners>
@@ -92,7 +97,7 @@
       <NeighborhoodConnector label="AllToAll" nfLabel="BFNFAll" lpLabel="sl"
         checkIfSameCC="false"/>
       <CCsConnector label="CCs" debug="false"
-        nfLabel="BFNF" lpLabel="slAlwaysTrue" checkIfSameCC="false"/>
+        nfLabel="BFNF" lpLabel="sl" checkIfSameCC="false"/>
       <RewireConnector label="Rewire" nfLabel="OptimalK" lpLabel="sl"/>
     </Connectors>
 
@@ -142,24 +147,15 @@
     <MPStrategies>
       <!-- Basic PRM where num samples is based on Number -->
       <BasicPRM label="OBPRM" debug="true" querySampler="UniformRandomFree">
-        <Sampler label="ObstacleBased" number="10" attempts="10"/>
-        <Connector label="Closest"/>
-        <Evaluator label="NodesEval"/>
-      </BasicPRM>
-
-      <BasicPRM label="BasicPRM1" debug="true" querySampler="UniformRandomFree">
-        <Sampler label="UniformRandomFree" number="25" attempts="1"/>
-        <Connector label="Closest"/>
+        <Sampler label="MixOBUniform" number="10" attempts="10"/>
+        <Connector label="CCs"/>
         <Evaluator label="Query"/>
       </BasicPRM>
 
-
-      <!-- Basic PRM restarted from an input roadmap input.map. -->
-      <BasicPRM label="BasicPRM2"
-        inputMap="input.map">
-        <Sampler label="UniformRandomFree" number="10" attempts="10"/>
+      <BasicPRM label="BasicPRM" debug="true" querySampler="UniformRandomFree">
+        <Sampler label="UniformRandomFree" number="25" attempts="1"/>
         <Connector label="Closest"/>
-        <Evaluator label="NodesEval"/>
+        <Evaluator label="Query"/>
       </BasicPRM>
 
       <!-- LazyPRM -->
@@ -178,14 +174,6 @@
         <Evaluator label="Query"/>
       </BasicRRTStrategy>
 
-      <!-- The connector needs to be Rewire for RRT* -->
-      <BasicRRTStrategy label="RRTstar"
-        querySampler="UniformRandomFree" samplerLabel="UniformRandom"
-        growGoals="false" growthFocus="0.01" 
-        nfLabel="Nearest" extenderLabel="BERO" connectorLabel="Rewire">
-        <Evaluator label="NodesEval"/>
-      </BasicRRTStrategy>
-
     </MPStrategies>
 
     <MPTools>
@@ -198,7 +186,7 @@
 
     <!-- MPProblem allows multiple solvers to be specified and executed. -->
 
-    <Solver mpStrategyLabel="RRT" seed="12345678"
+    <Solver mpStrategyLabel="OBPRM" seed="12345678"
       baseFilename="example" vizmoDebug="true"/>
 
   </Library>

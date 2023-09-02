@@ -6,6 +6,12 @@ __Difficulty__: 3/5
 
 __Provided by__: Parasol Lab
 
-The ```serial_walls.xml``` file is provided, which will generate the below solution.
+The ```serial_walls.xml``` file is provided, which will generate the below solution using Obstacle-Based PRM (OBPRM). The xml file also includes other strategies you may want to experiment with.
+
+To run this benchmark using the open-source PPL code, after compiling the executable, run 
+
+```
+<your_path_to_ppl>/build/ppl_mp -f serial_walls.xml
+```
 
 ![Alt Text](media/serial-walls.gif)
