@@ -29,6 +29,6 @@ To run this benchmark using the open-source PPL code, after compiling the execut
 
 |  |  |
 | ------ | ------ |
-| Samples       |    -    |
-| CD Calls       |   -     |
-| Runtime       |    -    |
+| Samples       |   10,797    |
+| CD Calls       |  12,970,998   |
+| Runtime       |    292 sec   |
