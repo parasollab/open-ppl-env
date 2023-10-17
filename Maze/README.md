@@ -2,7 +2,7 @@
 The Maze environment consists of a maze that the robot has to traverse.
 <!-- The robot is a stick which is considered a rigid body with 6 degrees of freedom. -->
 
-![Alt Text](media/maze.gif)
+![Maze Gif](media/maze.gif)
 
 __Type__: Static 2D
 
