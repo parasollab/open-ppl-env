@@ -64,6 +64,10 @@
       <ObstacleBasedSampler label="ObstacleBased" vcLabel="rapid" useBBX="false"
         pointSelection="cspace" dmLabel="euclidean" stepSize="0.0"
         nShellsColl="0" nShellsFree="3" debug="false"/>
+      <GaussianSampler label="Gauss" vcLabel="rapid" d="0.2" dmLabel="euclidean"
+        useBBX="false"/>
+      <BridgeTestSampler label="Bridge" vcLabel="rapid" d="0.2"
+        dmLabel="euclidean" useBBX="true"/>
 
       <MixSampler label="MixOBUniform">
         <Sampler label="UniformRandomFree" p="0.001"/>
@@ -173,6 +177,24 @@
         goalDmLabel="euclidean" goalThreshold="5">
         <Evaluator label="Query"/>
       </BasicRRTStrategy>
+
+      <!-- The connector needs to be Rewire for RRT* -->
+      <BasicRRTStrategy label="RRTstar"
+        querySampler="UniformRandomFree" samplerLabel="UniformRandom"
+        growGoals="false" growthFocus="0.01"
+        nfLabel="Nearest" extenderLabel="BERO" connectorLabel="Rewire">
+        <Evaluator label="NodesEval"/>
+      </BasicRRTStrategy>
+
+      <!-- DynamicRegionRRT -->
+      <DynamicRegionRRT label="DRRRT" debug="true" querySampler="UniformRandomFree"
+          samplerLabel="UniformRandom" nfLabel="Nearest" extenderLabel="BERO"
+          growGoals="false" connectorLabel="Closest" explore=".2" regionFactor="2.5"
+          penetration="1" velocityBiasing="false" velocityAlignment=".4"
+          decompositionLabel="fine" skeletonType="ma" goalThreshold="5"
+          goalDmLabel="euclidean">
+          <Evaluator label="BoundedQuery" />
+      </DynamicRegionRRT>
 
     </MPStrategies>
 
