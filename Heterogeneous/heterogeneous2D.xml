@@ -8,13 +8,7 @@
     <Environment filename="heterogeneous2D.env"
       frictionCoefficient="0" gravity="0 0 0"/>
 
-    <Robot label="robot" filename="heterogeneous2D.robot">
-      <!--
-      <Agent type="planning"/>
-      -->
-      <Agent type="pathfollowing" waypointDm="euclideanPosition"
-        waypointThreshold=".05"/>
-    </Robot>
+    <Robot label="robot" filename="heterogeneous2D.robot"/>
 
     <Task label="query" robot="robot">
       <StartConstraints>

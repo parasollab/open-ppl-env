@@ -23,7 +23,7 @@ The ```alpha.xml``` file is provided, which will generate the above solution usi
 To run this benchmark using the open-source PPL code, after compiling the executable, run
 
 ```
-<your_path_to_open-ppl>/build/ppl_exec -f alpha.xml
+<your_path_to_open-ppl>/build/ppl_mp -f alpha.xml
 ```
 
 |  |  |

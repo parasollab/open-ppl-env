@@ -8,13 +8,7 @@
     <Environment filename="serial.env"
       frictionCoefficient="0" gravity="0 0 0"/>
 
-    <Robot label="robot" filename="serial.robot">
-      <!--
-      <Agent type="planning"/>
-      -->
-      <Agent type="pathfollowing" waypointDm="euclideanPosition"
-        waypointThreshold=".05"/>
-    </Robot>
+    <Robot label="robot" filename="serial.robot"/>
 
     <Task label="query" robot="robot">
       <StartConstraints>
