@@ -32,4 +32,4 @@ To run this benchmark using the open-source PPL code, after compiling the execut
 | ------ | ------ |
 | Samples       |   7,924    |
 | CD Calls       |   3,661,820   |
-| Runtime       |    1,136 sec   |
+| Runtime       |    238 sec   |
