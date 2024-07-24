@@ -3,7 +3,7 @@
 This environment contains an assortment of obstacles of varying sizes and shapes and also includes a winding narrow passage.
 The model is available in BYU format, with each piece represented in a separate file.
 
-![Alt Text](media/Het.gif)
+![Alt Text](Media/Het.gif)
 
 __Type__: Static 2D
 
