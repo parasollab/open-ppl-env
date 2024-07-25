@@ -1,4 +1,4 @@
-# Heterogeneous
+# ZigZag
 
 The Zig-Zag environment represents an easy winding narrow passage which fools many sampling-based planners. It is a nice 2D problem, to study qualities of various planners.
 The model is available in BYU format, with each piece represented in a separate file.
@@ -26,10 +26,10 @@ To run this benchmark using the open-source PPL code, after compiling the execut
 | ------ | ------ |
 | Code Version       |  OpenPPL main, commit xxxx |
 | MPStrategy       |   RRT     |
-| Sampler(s)       |   UniformRandomFree, ObstacleBased     |
+| Sampler(s)       |   UniformRandom, ObstacleBased     |
 
 |  |  |
 | ------ | ------ |
-| Samples       |   xxxx    |
-| CD Calls       |   xxxx   |
-| Runtime       |    xxxx   |
+| Samples       |   151    |
+| CD Calls       |   0   |
+| Runtime       |    0.4263 sec   |
