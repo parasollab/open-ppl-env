@@ -24,7 +24,7 @@ To run this benchmark using the open-source PPL code, after compiling the execut
 
 |  |  |
 | ------ | ------ |
-| Code Version       |  OpenPPL main, commit xxxx |
+| Code Version       |  OpenPPL main, commit cfff4de05e333f76f805bcead1f60fac9d73bc5a |
 | MPStrategy       |   RRT     |
 | Sampler(s)       |   UniformRandom, ObstacleBased     |
 
