@@ -2,8 +2,13 @@
 
 This is a group of three environments, each with two rectangular obstacles of varying sizes that create a simple, straightforward path that the robot can pass through. The passsage size also varies. The model is available in BYU format, with each piece represented in a separate file.
 
+## Obstacle 1
 <img src="Media/Obstacle1GIF.gif" alt="Obstacle 1" width="50%" height="50%"/>
+
+## Obstacle 2
 <img src="Media/Obstacle2GIF.gif" alt="Obstacle 2" width="50%" height="50%"/>
+
+## Obstacle 3
 <img src="Media/Obstacle3GIF.gif" alt="Obstacle 3" width="50%" height="50%"/>
 
 __Type__: Static 2D
