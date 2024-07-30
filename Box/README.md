@@ -14,7 +14,7 @@ The linkage information is contained in an environment file, which is in our env
 
 We solved this problem using our OBPRM planner. 
 
-![box_folding_problem_gif](media/box.gif)
+![box_folding_problem_gif](Media/box.gif)
 
 __Type__: Static 3D
 
