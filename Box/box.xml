@@ -36,16 +36,16 @@
     </DistanceMetrics>
 
     <ValidityCheckers>
-      <CollisionDetection label="rapid" method="RAPID"/>
+      <CollisionDetection label="rapid" method="RAPID" ignoreAdjacentLinks="true"/>
       <CollisionDetection label="pqp" method="PQP"/>
-      <CollisionDetection label="pqp_solid" method="PQP_SOLID" ignoreAdjacentLinks="true" />
+      <CollisionDetection label="pqp_solid" method="PQP_SOLID" ignoreAdjacentLinks="true"/>
       <CollisionDetection label="bounding_spheres" method="BoundingSpheres"/>
       <CollisionDetection label="inside_spheres" method="InsideSpheres"/>
       <AlwaysTrueValidity label="alwaysTrue"/>
     </ValidityCheckers>
 
     <NeighborhoodFinders>
-      <BruteForceNF label="BFNF" dmLabel="euclidean" unconnected="false" k="5"/>
+      <BruteForceNF label="BFNF" dmLabel="euclidean" unconnected="false" k="4"/>
       <BruteForceNF label="Nearest" dmLabel="euclidean" unconnected="false"
         k="1"/>
       <BruteForceNF label="BFNFAll" dmLabel="euclidean" k="0"/>
@@ -57,15 +57,11 @@
       <UniformRandomSampler label="UniformRandomFree" vcLabel="pqp_solid"/>
       <ObstacleBasedSampler label="ObstacleBased" vcLabel="rapid" useBBX="false"
         pointSelection="cspace" dmLabel="euclidean" stepSize="0.0"
-        nShellsColl="0" nShellsFree="3" debug="false"/>
-      <GaussianSampler label="Gauss" vcLabel="rapid" d="0.2" dmLabel="euclidean"
-        useBBX="false"/>
-      <BridgeTestSampler label="Bridge" vcLabel="rapid" d="0.2"
-        dmLabel="euclidean" useBBX="true"/>
+        nShellsColl="0" nShellsFree="10" debug="false"/>
 
       <MixSampler label="MixOBUniform">
-        <Sampler label="UniformRandomFree" p="0.001"/>
-        <Sampler label="ObstacleBased" p="0.999"/>
+        <Sampler label="UniformRandomFree" p="0.1"/>
+        <Sampler label="ObstacleBased" p="0.9"/>
       </MixSampler>
     </Samplers>
 
@@ -172,24 +168,6 @@
         <Evaluator label="Query"/>
       </BasicRRTStrategy>
 
-      <!-- The connector needs to be Rewire for RRT* -->
-      <BasicRRTStrategy label="RRTstar"
-        querySampler="UniformRandomFree" samplerLabel="UniformRandom"
-        growGoals="false" growthFocus="0.01"
-        nfLabel="Nearest" extenderLabel="BERO" connectorLabel="Rewire">
-        <Evaluator label="NodesEval"/>
-      </BasicRRTStrategy>
-
-      <!-- DynamicRegionRRT -->
-      <DynamicRegionRRT label="DRRRT" debug="true" querySampler="UniformRandomFree"
-          samplerLabel="UniformRandom" nfLabel="Nearest" extenderLabel="BERO"
-          growGoals="false" connectorLabel="Closest" explore=".2" regionFactor="2.5"
-          penetration="1" velocityBiasing="false" velocityAlignment=".4"
-          decompositionLabel="fine" skeletonType="ma" goalThreshold="5"
-          goalDmLabel="euclidean">
-          <Evaluator label="BoundedQuery" />
-      </DynamicRegionRRT>
-
     </MPStrategies>
 
     <MPTools>
@@ -203,7 +181,7 @@
     <!-- MPProblem allows multiple solvers to be specified and executed. -->
 
     <Solver mpStrategyLabel="OBPRM" seed="12345678"
-      baseFilename="box" vizmoDebug="true"/>
+      baseFilename="example" vizmoDebug="true"/>
 
   </Library>
 
