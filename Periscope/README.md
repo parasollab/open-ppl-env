@@ -20,12 +20,12 @@ The ```periscope.xml``` file is provided, which will generate the above solution
 To run this benchmark using the open-source PPL code, after compiling the executable, run
 
 ```
-<your_path_to_open-ppl>/build/ppl_mp -f alpha.xml
+<your_path_to_open-ppl>/build/ppl_mp -f periscope.xml
 ```
 
 |  |  |
 | ------ | ------ |
-| Code Version       |  OpenPPL main, commit d4e7d44caf18ff0c9962c9a0f47e18c4220d6747 |
+| Code Version       |  OpenPPL main, commit 22988962e56db93ed68a0e6b7acc7ac952f73434 |
 | MPStrategy       |   OBPRM     |
 | Sampler(s)       |   UniformRandomFree, ObstacleBased     |
 
