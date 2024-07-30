@@ -4,23 +4,17 @@ The box folding problem is a motion planning problem containing a narrow passage
 
 The objective is to fold the articulated model into its final box shape. 
 
-There are no external obstacles in the enviroment, but self-collision among the links (connected by revolute joints) must be avoided.
+There are no external obstacles in the enviroment, but self-collision among the links (connected by revolute joints) must be avoided. The model consists of 11 parts, each of which is a rectangular piece.
 
-The model consists of 11 parts, each of which is a rectangular piece.
-
-One is considered the fixed base, and 10 are considered links. 
-
-However, taking advantage of symmetry conditions, we can reduce the number of parts by half (1 fixed base and 5 links). 
+One is considered the fixed base, and 10 are considered links. However, taking advantage of symmetry conditions, we can reduce the number of parts by half (1 fixed base and 5 links). 
 
 The model is available in BYU format, with each piece (base and links) represented in a separate file. 
 
-The linkage information is contained in an environment file, which is in our env format. 
-
-The environment file gives the pieces in the start configuration shown below.
+The linkage information is contained in an environment file, which is in our env format. The environment file gives the pieces in the start configuration shown below.
 
 We solved this problem using our OBPRM planner. 
 
-![Alt Text](media/.gif)
+![box_folding_problem_gif](media/box.gif)
 
 __Type__: Static 3D
 
